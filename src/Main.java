@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Main {
-    static Employee[] employees = new Employee[10];
+    private static Employee[] employees = new Employee[10];
 
     public static void main(String[] args) {
 
@@ -16,29 +16,29 @@ public class Main {
         employees[8] = new Employee("Пермяков Денис Андреевич", 4, 60000);
         employees[9] = new Employee("Долженкова Ирина Васильевна", 5, 55000);
         printInfoEmployee();
-        printSumSalary();
-        printMinSalary();
-        printMaxSalary();
+        System.out.println("Сумма всех затрат на зарплату: " + printSumSalary() + " рублей");
+        System.out.println("Минимальная зарплата сотрудника: " + printMinSalary() + " рублей");
+        System.out.println("Максимальная зарплата сотрудника: " + printMaxSalary() + " рублей");
         printAverageSalary();
         printFullNameEmployees();
 
     }
 
-    static void printInfoEmployee() {
+    private static void printInfoEmployee() {
         for (Employee emp : employees) {
             System.out.println(emp);
         }
     }
 
-    static void printSumSalary() {
+    private static double printSumSalary() {
         double sumSalary = 0;
         for (Employee emp : employees) {
             sumSalary = sumSalary + emp.getSalary();
         }
-        System.out.println("Сумма всех затрат на зарплату: " + sumSalary + " рублей");
+        return sumSalary;
     }
 
-    static void printMinSalary() {
+    private static double printMinSalary() {
         double minSalary = employees[0].getSalary();
         Employee name = employees[0];
         for (Employee emp : employees) {
@@ -47,10 +47,10 @@ public class Main {
                 name = emp;
             }
         }
-        System.out.println("Минимальная зарплата сотрудника: " + name.toString() + " рублей");
+        return minSalary;
     }
 
-    static void printMaxSalary() {
+    private static double printMaxSalary() {
         double maxSalary = 0;
         Employee name = employees[0];
         for (Employee emp : employees) {
@@ -59,20 +59,15 @@ public class Main {
                 name = emp;
             }
         }
-        System.out.println("Максимальная зарплата сотрудника: " + name.toString() + " рублей");
+        return maxSalary;
     }
 
-    static void printAverageSalary() {
-        double average = 0;
-        double sumSalary = 0;
-        for (Employee emp : employees) {
-            sumSalary = sumSalary + emp.getSalary();
-            average = sumSalary / emp.getId();
-        }
+    private static void printAverageSalary() {
+        double average = printSumSalary() / employees.length;
         System.out.println("Средняя зарплата сотрудника: " + average + " рублей");
     }
 
-    static void printFullNameEmployees() {
+    private static void printFullNameEmployees() {
         for (Employee emp : employees) {
             System.out.println(emp.getFullName());
         }
