@@ -19,7 +19,7 @@ public class Main {
         System.out.println("Сумма всех затрат на зарплату: " + printSumSalary() + " рублей");
         System.out.println("Минимальная зарплата сотрудника: " + printMinSalary() + " рублей");
         System.out.println("Максимальная зарплата сотрудника: " + printMaxSalary() + " рублей");
-        printAverageSalary();
+        System.out.println("Средняя зарплата сотрудника: " + printAverageSalary() + " рублей");
         printFullNameEmployees();
 
     }
@@ -62,9 +62,9 @@ public class Main {
         return maxSalary;
     }
 
-    private static void printAverageSalary() {
+    private static double printAverageSalary() {
         double average = printSumSalary() / employees.length;
-        System.out.println("Средняя зарплата сотрудника: " + average + " рублей");
+        return average;
     }
 
     private static void printFullNameEmployees() {

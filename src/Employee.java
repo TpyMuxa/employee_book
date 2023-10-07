@@ -1,6 +1,6 @@
 public class Employee {
-    String fullName;
-    Double salary;
+    private String fullName;
+    private double salary;
     private int department;
     private static int employeeIdCounter = 0;
     private int id;
@@ -16,7 +16,7 @@ public class Employee {
         return this.fullName;
     }
 
-    public Double getSalary() {
+    public double getSalary() {
         return this.salary;
     }
 
