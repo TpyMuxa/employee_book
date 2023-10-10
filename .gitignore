@@ -1,7 +1,9 @@
 ### IntelliJ IDEA ###
+/.idea/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
 
 ### Eclipse ###
 .apt_generated
@@ -27,3 +29,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/employee_book.iml
+/.idea/
